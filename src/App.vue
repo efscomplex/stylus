@@ -1,19 +1,48 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
-</template>
-
-<style lang="stylus">
+<template lang="pug"> 
 #app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+    Header(title="Stylus Vendor Overrides" class="header").header
+    Main
+        .collection
+            Form.form
+            Content
+    Footer.footer
+        p powered by @efscomplex
+</template>
+<script>
+export default {
+    components:{
+        Header: ()=> import('@/components/core/Header'),
+        Main: ()=> import('@/components/core/Main'),
+        Footer: ()=> import('@/components/core/Footer')
+    }
+}
+</script>
+<style lang="stylus">
+@import 'stylus/styles'
+*
+    margin 0
+    padding 0
+    box-sizing border-box
+#app
+    height 100vh
+    display grid
+    grid-template-rows min-content 1fr min-content
+.header
+    padding 1.4rem
+    text-align center
+    background-color #333
+    color text
+.title
+    text-align center
+.collection
+    display flex
+    flex-wrap wrap
+    justify-content space-evenly
+    align-items:flex-start
+    & > * 
+        margin 1rem
+        background-color background
+form, .form
+    background-color darken(lightcoral,40)
+    color white
 </style>

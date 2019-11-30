@@ -1,4 +1,4 @@
-# eslint-project
+# Getting Started with Stylus
 
 ## Project setup
 ```

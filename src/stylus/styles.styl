@@ -1,0 +1,18 @@
+@import 'components/*.styl'
+
+primary = blue
+secondary = green
+warning = yellow
+alert = red
+info = lightblue
+text = gray
+background = #333
+textDisable(color)
+    return rgba(color,.3)
+textMedEmph(color)
+    return rgba(color, .6)
+colorContrast(color, amount= 40%)
+    if light(color)
+        return shade(color, amount)
+    else
+        return tint(color, amount)

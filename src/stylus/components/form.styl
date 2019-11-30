@@ -1,0 +1,36 @@
+form
+    display: inline-block
+    padding:1rem
+    border-radius 3px
+    input 
+        margin-bottom 1rem
+    input ~ small
+        margin-bottom 1rem
+    input
+        padding .4rem 0 .1rem
+        font-family inherit
+        font-size .8em
+        border none
+        border-bottom 1px solid inherit
+        font-weight 100
+        background-color transparent
+        color inherit
+        &:focus
+            outline none
+        &:invalid
+            color red
+        &::placeholder
+            opacity .8
+    fieldset
+        border:none
+    label
+        display block
+        margin-right 1rem
+    span + input
+        display block
+input[type="checkbox"]
+    display inline-block
+    vertical-align middle
+small
+    opacity .6
+    font-weight 100
