@@ -1,0 +1,40 @@
+input()
+   input
+      {block}
+input = 'input[type=number], input[type=text], input[type=password], input[type=email], input:not([type])'
+{input}
+   padding .4rem .6rem .1rem
+   font-family inherit
+   border none
+   font-weight 100
+   font-size 1rem
+   background-color transparent
+   color inherit
+   &:focus
+      outline none
+   &:invalid
+      color red
+   &::placeholder
+      opacity .8
+form
+   display: inline-block
+   padding:1rem
+   border-radius 3px
+   {input}
+      margin-bottom 1rem
+      border-bottom 1px solid @color
+   {input} ~ small
+      margin-bottom 1rem
+   fieldset
+      border:none
+   label
+      display block
+      margin-right 1rem
+   span + {input}
+      display block
+input[type="checkbox"]
+   display inline-block
+   vertical-align middle
+small
+   opacity .6
+   font-weight 100

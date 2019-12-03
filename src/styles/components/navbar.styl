@@ -1,0 +1,22 @@
+nav
+   display inline-block
+.navbar
+   display:inline-flex
+   padding:0
+   a
+      text-decoration:none
+      display:block
+      color:inherit
+      letter-spacing:0.5px
+      &:hover
+         opacity:.7
+
+.navbar-h, .navbar-v
+   @extend .navbar
+.navbar-h
+   a
+      padding:0 1rem
+.navbar-v
+   flex-direction:column
+   a
+      padding: .8rem 0

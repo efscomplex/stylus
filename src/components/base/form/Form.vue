@@ -1,7 +1,7 @@
 <template lang='pug'>
 form
     fieldset
-        label(for="username") 
+        label(for="username")
             span Username
             input(id="username" type="text" name="username" v-model="username" required)
     fieldset
@@ -18,9 +18,9 @@ form
     label(for="message")
         span message
         input(type="text" name="message" v-model="message" required placeholder="message")
-
+    input(type="submit" value="Send Message")
 </template>
-   
+
 <script>
 import {ref} from '@vue/composition-api'
 export default {

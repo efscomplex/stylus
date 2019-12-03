@@ -1,12 +1,12 @@
-<template lang="pug"> 
+<template lang="pug">
 #app
-    Header(title="Stylus Vendor Overrides" class="header").header
-    Main
-        .collection
-            Form.form
-            Content
-    Footer.footer
-        p powered by @efscomplex
+  Header(title="Stylus Vendor Overrides" class="header").header
+  Main
+    .collection
+      Form.form
+      Content
+  Footer.footer
+    p powered by @efscomplex
 </template>
 <script>
 export default {
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-@import 'stylus/styles'
+@import 'styles/styles'
 *
     margin 0
     padding 0
@@ -39,10 +39,11 @@ export default {
     flex-wrap wrap
     justify-content space-evenly
     align-items:flex-start
-    & > * 
+    & > *
         margin 1rem
-        background-color background
-form, .form
-    background-color darken(lightcoral,40)
-    color white
+form
+  background-color white
+  @extend .dark
++btn()
+  background-color primary
 </style>

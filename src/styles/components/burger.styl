@@ -1,0 +1,12 @@
+.burger
+   w = 3px
+   size = 5*w
+   color black unless @color
+   display inline-block
+   margin 0 1rem
+   width size
+   height size
+   cursor pointer
+   background: linear-gradient(@color w,transparent w),
+      linear-gradient(transparent w*2, @color w*2, @color w*3,transparent w*3),
+      linear-gradient(transparent w*4, @color w*4, @color w*5,transparent w*5)

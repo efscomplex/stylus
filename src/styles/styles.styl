@@ -1,0 +1,50 @@
+@import 'components/*.styl'
+@import 'themes/*.styl'
+@import 'reset'
+@import 'utils'
+@import 'media'
+@import 'animations'   
+
+.group-inline
+   & > * 
+      &:not(last-child)
+         margin-right 1rem
+.wrap
+   padding 1rem
+.group
+   display flex
+   flex-wrap wrap
+   @extend .group-inline
+   
+textDisable(color)
+    return rgba(color,.3)
+textMedEmph(color)
+    return rgba(color, .6)
+colorContrast(color, amount= 40%)
+    if light(color)
+        return shade(color, amount)
+    else
+        return lighten(color, amount)
+.dark
+   background-color dark unless @background-color
+   color colorContrast(@background-color, 90%) unless @color
+
+//* *//
+/* .container 
+   width 100%
+   display flex
+   flex-wrap wrap
+   justify-content center
+   align-items center
+   overflow hidden
+   > *
+      margin 1rem
+.flex-grid
+   display: flex
+   justify-content: space-evenly
+   flex-wrap:wrap
+   & > * 
+      margin: 1rem */
+/* for i in (0..100)
+   .pd-{i}
+      padding: i*1px */

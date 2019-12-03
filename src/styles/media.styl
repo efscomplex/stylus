@@ -1,0 +1,39 @@
+s = 576px
+m = 768px
+l = 992px
+xl = 1200px
+
+media-min-width(size)
+   @media screen and (min-width size) 
+      {block}
+media-max-width(size)
+   @media screen and (max-width size)
+      {block}
+vendor(prop, args)
+    -webkit-{prop} args
+    -moz-{prop} args
+    {prop} args
+s-width()
+   vendor('width', arguments)  
+media-s(prop,args)
+   +media-min-width(s)
+      vendor(prop, args)
+media-m(prop,args)
+   +media-min-width(m)
+      vendor(prop, args)
+media-l(prop,args)
+   +media-min-width(l)
+      vendor(prop, args)
+media-xl(prop,args)
+   +media-min-width(xl)
+      vendor(prop, args)
+// prop: opacity , pairs = ('s' 0) ('m' 1) */
+media-min(prop,pairs) 
+   for value, media in pairs
+      +media-min-width(media)
+         vendor(prop, unquote(value))
+media-max(prop,pairs)
+   for value, media in pairs
+      +media-max-width(media)
+         vendor(prop, unquote(value))
+  
