@@ -1,25 +1,60 @@
-.hide
+.hidden
    --lapse .4s
-   transition width var(--lapse) ease-in-out, opacity var(--lapse) ease-in-out
-  @media screen and (min-width m)
-      width 0
-      opacity 0
-      overflow hidden
-.hover
+   transition width var(--lapse) ease-in-out, opacity var(--lapse) ease-in-out, width var(--lapse) ease-in-out;
+   width 0
+   height 0
+   opacity 0
+   overflow hidden
+.pointer
    cursor:pointer
-.flex
-   display:flex
-   flex-wrap wrap
-/* props = {
-   margin: 'mg',
-   margin-left: 'mg-l',
-   margin-right: 'mg-r',
-   margin-bottom: 'mg-b',
-   margin-top: 'mg-t',
-   padding: 'pd',
-   padding-left: 'pd-l',
-}
-for prop, shortcut in props
-   for val in (0..100)
-      .{shortcut}-{val}px
-         {prop} unit(val,px) */
+.expand
+   width 100%
+//* another utils *//
+.img-center
+   object-fit cover
+   object-position center
+.img
+   max-width 100%
+   @extends .img-center
+.avatar
+   @extend .img
+   width var(--avatar, 80px)
+   height @width
+   border-radius 50%
+.square
+   //--sq-w 10rem
+   width var(--sq-w)
+   height var(--sq-w, @width)
+.logo
+   @extend .img
+   width var(--logo-w, 80px)
+
+.banner
+   width 100%
+   transition background-image .6s ease-in-out
+   background-position center
+   background-size cover
+.layer
+   --layer-content ''
+   --layer-bg transparent
+   position relative
+   &:after
+      content var(--layer-content)
+      position absolute
+      top 0
+      width 100%
+      height 100%
+      z-index 100
+      background var(--layer-bg)
+.hr   
+   width 100%
+   display flex
+   align-items center
+   &:before
+      margin-right 1rem
+   &:after
+      margin-left 1rem
+   &:before, &:after
+      content ''
+      width 100%
+      border-bottom 1px solid var(--hr-c, rgba(gray,.4))

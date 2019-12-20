@@ -4,19 +4,26 @@ nav
    display:inline-flex
    padding:0
    a
-      text-decoration:none
       display:block
+      
+      text-decoration:none
+      text-transform capitalize
+      
       color:inherit
       letter-spacing:0.5px
+      cursor pointer
+      
       &:hover
          opacity:.7
 
 .navbar-h, .navbar-v
    @extend .navbar
-.navbar-h
+
+.navbar-h, .navbar
    a
-      padding:0 1rem
+      padding:0 .8em
+      
 .navbar-v
    flex-direction:column
    a
-      padding: .8rem 0
+      padding: .8em 0

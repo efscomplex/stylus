@@ -1,0 +1,27 @@
+.card
+   pd = var(--card-pd, 1rem)
+   display grid
+   grid-template-areas 'banner' 'header' 'body' 'footer'
+   max-width var(--card-mw, unset)
+   border-radius 6px
+   .banner
+      object-fit cover
+      object-position center
+      max-width 100%
+      grid-area banner
+   .header
+      padding pd
+      grid-area header
+      .subtitle
+         @extend .text !optional
+   .body
+      grid-area body
+      padding pd
+   .footer
+      grid-area footer
+      justify-self flex-start
+      padding pd
+.card-press
+   .banner
+      height 100%
+   grid-template-areas 'banner header' 'banner body' 'banner footer'

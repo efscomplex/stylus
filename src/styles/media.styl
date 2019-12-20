@@ -2,6 +2,17 @@ s = 576px
 m = 768px
 l = 992px
 xl = 1200px
+breaks = {
+   s:s,
+   m:m,
+   l:l,
+   xl:xl
+}
+body
+   --s s
+   --m m
+   --l l
+   --xl xl
 
 media-min-width(size)
    @media screen and (min-width size) 

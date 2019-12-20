@@ -1,0 +1,69 @@
+import 'media'
+
+.flex
+   display flex
+   flex-wrap wrap
+.flex-col
+   @extends .flex
+   flex-direction column  
+.i-flex
+   display inline-flex
+   flex-wrap wrap
+.just-center
+   justify-content center
+.align-center
+   align-items center
+.just-self-center
+   justify-self center
+.algin-self-center
+   align-self center
+.item
+   margin 1rem
+
+.container 
+   display flex
+   flex-wrap wrap
+   justify-content center
+   align-items center
+
+.container-col
+   display flex
+   flex-wrap wrap
+   justify-content center
+   align-items center
+   flex-direction column  
+
+.h-expand
+   height 100%
+.jumbotron
+   padding 3rem
+   margin 2rem auto
+   background-color var(--card-bg, transparent)
+   border-radius 4px
+.grid
+   display grid
+.i-grid
+   display inline-grid
+.grid-col
+   @extend .grid
+   grid-auto-flow column
+.i-grid-col
+   @extend .i-grid
+   grid-auto-flow column
+for i in (1..10)
+   .gap-{i}
+      @extend .grid
+      grid-gap i*.5 rem
+   .col-gap-{i}
+      column-gap i*.5 rem
+   .row-gap-{i}
+      row-gap i*.5 rem 
+for n in (1..12)
+   .grid-{n} 
+      @extends .grid
+      grid-template-columns repeat(n, 1fr)
+   .i-grid-{n}
+      @extends .i-grid
+      grid-template-columns repeat(n, 1fr)
+
+   
